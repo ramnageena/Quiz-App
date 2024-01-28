@@ -15,6 +15,6 @@ public interface QuestionRepo extends JpaRepository<Question, Integer> {
 	List<Question>findByCategory(String category);
 
 	@Query(value = "Select * from question_table q where q.category=:category ORDER BY RAND() LIMIT :numQ",nativeQuery = true)
-      List<Question> findRandonQuestionByCategory(String category, int numQ);
+      List<Question> findRandomQuestionByCategory(String category, int numQ);
 
 }

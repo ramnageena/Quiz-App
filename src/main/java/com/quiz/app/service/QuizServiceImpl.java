@@ -2,7 +2,6 @@ package com.quiz.app.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,7 @@ public class QuizServiceImpl implements QuizService {
 
 	@Override
 	public String createQuiz(String category, int numQ, String title) {
-		List<Question> questions = questionRepo.findRandonQuestionByCategory(category, numQ);
+		List<Question> questions = questionRepo.findRandomQuestionByCategory(category, numQ);
 		Quiz quiz = new Quiz();
 		quiz.setTitle(title);
 		quiz.setQuestions(questions);
